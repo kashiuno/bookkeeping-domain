@@ -8,7 +8,7 @@ import java.util.Optional;
 /**
  * Immutable. Class which allows us to operate with Account
  */
-public class Operation {
+public final class Operation {
     private final BigDecimal amount;
 
     private Operation(BigDecimal amount) {
