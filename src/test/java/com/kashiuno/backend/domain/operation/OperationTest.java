@@ -1,4 +1,4 @@
-package com.kashiuno.domain.operation;
+package com.kashiuno.backend.domain.operation;
 
 import org.junit.jupiter.api.Test;
 

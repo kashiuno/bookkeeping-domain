@@ -1,4 +1,4 @@
-package com.kashiuno.domain.operation;
+package com.kashiuno.backend.domain.operation;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

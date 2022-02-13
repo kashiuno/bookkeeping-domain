@@ -1,6 +1,6 @@
-package com.kashiuno.domain.account;
+package com.kashiuno.backend.domain.account;
 
-import com.kashiuno.domain.operation.Operation;
+import com.kashiuno.backend.domain.operation.Operation;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
