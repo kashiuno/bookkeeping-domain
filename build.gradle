@@ -1,9 +1,10 @@
 plugins {
     id 'java'
+    id 'maven-publish'
 }
 
 group 'com.kashiuno'
-version '1.0.0-SNAPSHOT'
+version '1.0.0.M1'
 
 repositories {
     mavenCentral()
@@ -18,4 +19,46 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+publishing {
+    publications {
+        gpr(MavenPublication) {
+            artifactId = 'bookkeeping-domain'
+            from components.java
+            pom {
+                name = 'Bookkeeping domain'
+                description = 'Main domain for bookkeeping application backend'
+                licenses {
+                    license {
+                        name = 'The Apache License, Version 2.0'
+                        url = 'https://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'kashiuno'
+                        name = 'Denis Krupin'
+                        email = 'taigusiobaka@gmail.com'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git://github.com/kashiuno/bookkeeping-domain.git'
+                    developerConnection = 'scm:git:ssh://github.com/kashiuno/bookkeeping-domain.git'
+                    url = 'https://github.com/kashiuno/bookkeeping-domain/'
+                }
+            }
+        }
+    }
+
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri('https://maven.pkg.github.com/kashiuno/bookkeeping-domain')
+            credentials {
+                username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
+                password = project.findProperty("gpr.key") ?: System.getenv("TOKEN")
+            }
+        }
+    }
 }
