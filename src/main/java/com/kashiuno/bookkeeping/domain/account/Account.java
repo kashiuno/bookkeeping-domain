@@ -1,6 +1,6 @@
-package com.kashiuno.backend.domain.account;
+package com.kashiuno.bookkeeping.domain.account;
 
-import com.kashiuno.backend.domain.operation.Operation;
+import com.kashiuno.bookkeeping.domain.operation.Operation;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
